@@ -1,0 +1,18 @@
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\salon manager.exe.config
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\salon manager.exe
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\salon manager.pdb
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\MySql.Data.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\MySql.Web.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\Google.Protobuf.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\BouncyCastle.Crypto.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\MySql.Data.xml
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Release\MySql.Web.xml
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.csprojAssemblyReference.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.Form1.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project._2_MainForm.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.Properties.Resources.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.csproj.GenerateResource.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.csproj.CoreCompileInputs.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\Project.csproj.CopyComplete
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\salon manager.exe
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Release\salon manager.pdb

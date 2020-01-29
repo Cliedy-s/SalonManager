@@ -1,0 +1,283 @@
+
+CREATE TABLE 매출 (
+       날짜                 CHAR(18) NULL,
+       서비스               CHAR(18) NULL,
+       가격                 CHAR(18) NULL,
+       휴대전화번호         CHAR(18) NOT NULL
+);
+
+
+ALTER TABLE 매출
+       ADD  ( PRIMARY KEY (휴대전화번호) ) ;
+
+
+CREATE TABLE 소모품 (
+       소모품_번호          CHAR(18) NOT NULL,
+       제품_이름            CHAR(18) NULL,
+       제고                 CHAR(18) NULL,
+       비고                 CHAR(18) NULL
+);
+
+
+ALTER TABLE 소모품
+       ADD  ( PRIMARY KEY (소모품_번호) ) ;
+
+
+CREATE TABLE 시스템_사용자 (
+       아이디               CHAR(18) NOT NULL,
+       이름                 CHAR(18) NULL,
+       비밀번호             CHAR(18) NULL,
+       직급                 CHAR(18) NULL
+);
+
+
+ALTER TABLE 시스템_사용자
+       ADD  ( PRIMARY KEY (아이디) ) ;
+
+
+CREATE TABLE 예약 (
+       휴대전화번호         CHAR(18) NOT NULL,
+       날짜                 CHAR(18) NULL,
+       서비스               CHAR(18) NULL
+);
+
+
+ALTER TABLE 예약
+       ADD  ( PRIMARY KEY (휴대전화번호) ) ;
+
+
+CREATE TABLE 회원 (
+       회원_번호            CHAR(18) NOT NULL,
+       이름                 CHAR(18) NOT NULL,
+       성별                 CHAR(18) NOT NULL,
+       생일                 CHAR(18) NOT NULL,
+       휴대전화번호         CHAR(18) NOT NULL,
+       수신거부여부         CHAR(18) NOT NULL,
+       등급                 CHAR(18) NOT NULL,
+       vip포인트            CHAR(18) NOT NULL,
+       선호서비스           CHAR(18) NOT NULL
+);
+
+
+ALTER TABLE 회원
+       ADD  ( PRIMARY KEY (휴대전화번호) ) ;
+
+
+ALTER TABLE 매출
+       ADD  ( FOREIGN KEY (휴대전화번호)
+                             REFERENCES 회원(휴대전화번호) ) ;
+
+
+ALTER TABLE 예약
+       ADD  ( FOREIGN KEY (휴대전화번호)
+                             REFERENCES 회원(휴대전화번호) ) ;
+
+
+
+
+create trigger tI_매출 after INSERT on 매출 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- INSERT trigger on 매출 
+declare numrows INTEGER;
+begin
+    /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+    /* 회원 R/1 매출 ON CHILD INSERT RESTRICT */
+    select count(*) into numrows
+      from 회원
+      where
+        /* :new.휴대전화번호 = 회원.휴대전화번호 */
+        :new.휴대전화번호 = 회원.휴대전화번호;
+    if (
+      /*  */
+      
+      numrows = 0
+    )
+    then
+      raise_application_error(
+        -20002,
+        'Cannot INSERT 매출 because 회원 does not exist.'
+      );
+    end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+
+create trigger tU_매출 after UPDATE on 매출 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- UPDATE trigger on 매출 
+declare numrows INTEGER;
+begin
+  /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+  /* 회원 R/1 매출 ON CHILD UPDATE RESTRICT */
+  select count(*) into numrows
+    from 회원
+    where
+      /* :new.휴대전화번호 = 회원.휴대전화번호 */
+      :new.휴대전화번호 = 회원.휴대전화번호;
+  if (
+    /*  */
+    
+    numrows = 0
+  )
+  then
+    raise_application_error(
+      -20007,
+      'Cannot UPDATE 매출 because 회원 does not exist.'
+    );
+  end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+
+create trigger tI_예약 after INSERT on 예약 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- INSERT trigger on 예약 
+declare numrows INTEGER;
+begin
+    /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+    /* 회원 R/2 예약 ON CHILD INSERT RESTRICT */
+    select count(*) into numrows
+      from 회원
+      where
+        /* :new.휴대전화번호 = 회원.휴대전화번호 */
+        :new.휴대전화번호 = 회원.휴대전화번호;
+    if (
+      /*  */
+      
+      numrows = 0
+    )
+    then
+      raise_application_error(
+        -20002,
+        'Cannot INSERT 예약 because 회원 does not exist.'
+      );
+    end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+
+create trigger tU_예약 after UPDATE on 예약 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- UPDATE trigger on 예약 
+declare numrows INTEGER;
+begin
+  /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+  /* 회원 R/2 예약 ON CHILD UPDATE RESTRICT */
+  select count(*) into numrows
+    from 회원
+    where
+      /* :new.휴대전화번호 = 회원.휴대전화번호 */
+      :new.휴대전화번호 = 회원.휴대전화번호;
+  if (
+    /*  */
+    
+    numrows = 0
+  )
+  then
+    raise_application_error(
+      -20007,
+      'Cannot UPDATE 예약 because 회원 does not exist.'
+    );
+  end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+
+create trigger tD_회원 after DELETE on 회원 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- DELETE trigger on 회원 
+declare numrows INTEGER;
+begin
+    /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+    /* 회원 R/2 예약 ON PARENT DELETE RESTRICT */
+    select count(*) into numrows
+      from 예약
+      where
+        /*  예약.휴대전화번호 = :old.휴대전화번호 */
+        예약.휴대전화번호 = :old.휴대전화번호;
+    if (numrows > 0)
+    then
+      raise_application_error(
+        -20001,
+        'Cannot DELETE 회원 because 예약 exists.'
+      );
+    end if;
+
+    /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+    /* 회원 R/1 매출 ON PARENT DELETE RESTRICT */
+    select count(*) into numrows
+      from 매출
+      where
+        /*  매출.휴대전화번호 = :old.휴대전화번호 */
+        매출.휴대전화번호 = :old.휴대전화번호;
+    if (numrows > 0)
+    then
+      raise_application_error(
+        -20001,
+        'Cannot DELETE 회원 because 매출 exists.'
+      );
+    end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+
+create trigger tU_회원 after UPDATE on 회원 for each row
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+-- UPDATE trigger on 회원 
+declare numrows INTEGER;
+begin
+  /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+  /* 회원 R/2 예약 ON PARENT UPDATE RESTRICT */
+  if
+    /* :old.휴대전화번호 <> :new.휴대전화번호 */
+    :old.휴대전화번호 <> :new.휴대전화번호
+  then
+    select count(*) into numrows
+      from 예약
+      where
+        /*  예약.휴대전화번호 = :old.휴대전화번호 */
+        예약.휴대전화번호 = :old.휴대전화번호;
+    if (numrows > 0)
+    then 
+      raise_application_error(
+        -20005,
+        'Cannot UPDATE 회원 because 예약 exists.'
+      );
+    end if;
+  end if;
+
+  /* ERwin Builtin Tue Apr 30 14:47:35 2019 */
+  /* 회원 R/1 매출 ON PARENT UPDATE RESTRICT */
+  if
+    /* :old.휴대전화번호 <> :new.휴대전화번호 */
+    :old.휴대전화번호 <> :new.휴대전화번호
+  then
+    select count(*) into numrows
+      from 매출
+      where
+        /*  매출.휴대전화번호 = :old.휴대전화번호 */
+        매출.휴대전화번호 = :old.휴대전화번호;
+    if (numrows > 0)
+    then 
+      raise_application_error(
+        -20005,
+        'Cannot UPDATE 회원 because 매출 exists.'
+      );
+    end if;
+  end if;
+
+
+-- ERwin Builtin Tue Apr 30 14:47:35 2019
+end;
+/
+

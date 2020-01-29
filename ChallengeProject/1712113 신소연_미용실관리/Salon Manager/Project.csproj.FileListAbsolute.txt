@@ -1,0 +1,18 @@
+E:\chellenge\code\Project\Project\bin\Release\salon manager.exe.config
+E:\chellenge\code\Project\Project\bin\Release\salon manager.exe
+E:\chellenge\code\Project\Project\bin\Release\salon manager.pdb
+E:\chellenge\code\Project\Project\bin\Release\MySql.Data.dll
+E:\chellenge\code\Project\Project\bin\Release\MySql.Web.dll
+E:\chellenge\code\Project\Project\bin\Release\Google.Protobuf.dll
+E:\chellenge\code\Project\Project\bin\Release\BouncyCastle.Crypto.dll
+E:\chellenge\code\Project\Project\bin\Release\MySql.Data.xml
+E:\chellenge\code\Project\Project\bin\Release\MySql.Web.xml
+E:\chellenge\code\Project\Project\obj\Release\Project.csprojAssemblyReference.cache
+E:\chellenge\code\Project\Project\obj\Release\Project.Form1.resources
+E:\chellenge\code\Project\Project\obj\Release\Project._2_MainForm.resources
+E:\chellenge\code\Project\Project\obj\Release\Project.Properties.Resources.resources
+E:\chellenge\code\Project\Project\obj\Release\Project.csproj.GenerateResource.cache
+E:\chellenge\code\Project\Project\obj\Release\Project.csproj.CoreCompileInputs.cache
+E:\chellenge\code\Project\Project\obj\Release\Project.csproj.CopyComplete
+E:\chellenge\code\Project\Project\obj\Release\salon manager.exe
+E:\chellenge\code\Project\Project\obj\Release\salon manager.pdb

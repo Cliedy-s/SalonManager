@@ -1,0 +1,18 @@
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\salon manager.exe.config
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\salon manager.exe
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\salon manager.pdb
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\MySql.Data.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\MySql.Web.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\Google.Protobuf.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\BouncyCastle.Crypto.dll
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\MySql.Data.xml
+D:\2019\ChallengeProject\ChellP\Project\Project\bin\Debug\MySql.Web.xml
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.Form1.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project._2_MainForm.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.Properties.Resources.resources
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.csproj.GenerateResource.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\Project.csproj.CopyComplete
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\salon manager.exe
+D:\2019\ChallengeProject\ChellP\Project\Project\obj\Debug\salon manager.pdb
